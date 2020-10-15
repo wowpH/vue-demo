@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>v-on指令</title>
+    <script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 使用事件绑定的简写形式 -->
+        <input type="button" value="打印日志" v-on:click="log('ph')">
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            methods: {
+                log: function (data) {
+                    console.log(data);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

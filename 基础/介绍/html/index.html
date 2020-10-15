@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 标签页的标题 -->
+    <title>我的第一个Vue项目</title>
+    <!-- 引入vue.js -->
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 展示message的值 -->
+        {{ message }}
+    </div>
+    <div id="app-2">
+        <span v-bind:title="createDate">
+            鼠标放在这里看看！
+        </span>
+    </div>
+
+    <!-- 页面的js代码 -->
+    <script>
+        // 新建一个Vue对象
+        var firstApp = new Vue({
+            // el是element的缩写，#app是id选择器
+            el: '#app',
+            // 页面使用的变量需要在data中注册（定义）
+            data: {
+                message: 'Hello Vue!'
+            }
+        });
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                createDate: '页面加载于' + new Date().toLocaleString()
+            }
+        });
+    </script>
+</body>
+
+</html>

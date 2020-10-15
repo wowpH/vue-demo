@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>v-model指令</title>
+    <script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app-5">
+        <!-- 居中展示 -->
+        <div style="text-align: center;">
+            <!-- 灯的图片 -->
+            <img :src="imgSrc" />
+            <!-- 开关按钮 -->
+            <button v-on:click="switchBulb">开关</button>
+        </div>
+    </div>
+    <script>
+        var app5 = new Vue({
+            el: '#app-5',
+            data: {
+                // 是否亮灯
+                isUp: false,
+                // 亮灯的图片
+                lightUp: '../img/light-up.gif',
+                // 熄灯的图片
+                lightOut: '../img/light-out.gif',
+                // 绑定到img标签的src属性
+                imgSrc: '../img/light-out.gif'
+            },
+            methods: {
+                // 开关灯
+                switchBulb: function () {
+                    if (this.isUp) {
+                        // 如果灯是亮的，切换到熄灯状态
+                        this.isUp = false;
+                        // 并将灯的图片切换为熄灯图片
+                        this.imgSrc = this.lightOut;
+                    } else {
+                        this.isUp = true;
+                        this.imgSrc = this.lightUp;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

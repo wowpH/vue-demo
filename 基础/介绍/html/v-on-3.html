@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>v-on指令</title>
+    <script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <a href="http://www.qq.com" v-on:click.once="btn($event)">腾讯</a>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            methods: {
+                btn: function (ev) {
+                    ev.preventDefault();
+                    alert('123');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
