@@ -1,3 +1,0 @@
----
-permalink: /v-on.html
----
